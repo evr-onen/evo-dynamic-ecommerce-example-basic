@@ -1,0 +1,47 @@
+import { Box, Button, Grid, InputAdornment, TextField, Typography } from "@mui/material"
+import React from "react"
+import { useTheme } from "@mui/material"
+
+import { GoMailRead } from "react-icons/go"
+const SubscribeBlock = () => {
+  const theme = useTheme()
+  return (
+    <Grid container rowSpacing={4} p="20px" sx={{ background: "#F4F4F4" }}>
+      <Grid item xs={12}>
+        <Typography textAlign="center" textTransform="uppercase">
+          SUBSCRIBE NEWSLETTER
+        </Typography>
+      </Grid>
+      <Grid item textAlign="center" xs={12}>
+        <Typography>Get all the latest information on Events, Sales and Offers.</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <TextField
+          sx={{ mx: "10%", "& .MuiOutlinedInput-root": { borderRadius: "50px", background: "#fff" } }}
+          autoComplete="off"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="end">
+                <Box mr="10px">
+                  <GoMailRead fontSize="20px" />
+                </Box>
+              </InputAdornment>
+            ),
+          }}
+          InputLabelProps={{
+            sx: { borderRadius: "250px", color: "secondary" },
+          }}
+        />
+      </Grid>
+      <Grid item xs={12} display="flex">
+        <Button variant="contained" sx={{ color: "white", background: theme.palette.secondary.main, mx: "auto" }}>
+          <Typography textTransform="uppercase" fontWeight={700}>
+            subscribe
+          </Typography>
+        </Button>
+      </Grid>
+    </Grid>
+  )
+}
+
+export default SubscribeBlock
