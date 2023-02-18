@@ -26,11 +26,11 @@ const SingleCommentSlider = () => {
       className="miniSlider"
     >
       <SwiperSlide>
-        <Grid container border={`5px solid ${theme.palette.primary.main}`} minHeight={200} p="15px">
+        <Grid container border={`5px solid ${theme.palette.primary?.main}`} minHeight={200} p="15px">
           <Grid item xs={12}>
             <Grid container>
               <Grid item xs={12}>
-                <Typography textAlign="center" fontWeight="600" fontSize="24px" color={theme.palette.black.main}>
+                <Typography textAlign="center" fontWeight="600" fontSize="24px" color={theme.palette.black?.main}>
                   John Smith
                 </Typography>
               </Grid>
@@ -58,11 +58,11 @@ const SingleCommentSlider = () => {
         </Grid>
       </SwiperSlide>{" "}
       <SwiperSlide>
-        <Grid container border={`5px solid ${theme.palette.primary.main}`} minHeight={200} p="15px">
+        <Grid container border={`5px solid ${theme.palette.primary?.main}`} minHeight={200} p="15px">
           <Grid item xs={12}>
             <Grid container>
               <Grid item xs={12}>
-                <Typography textAlign="center" fontWeight="600" fontSize="24px" color={theme.palette.black.main}>
+                <Typography textAlign="center" fontWeight="600" fontSize="24px" color={theme.palette.black?.main}>
                   John Smith
                 </Typography>
               </Grid>
@@ -90,11 +90,11 @@ const SingleCommentSlider = () => {
         </Grid>
       </SwiperSlide>{" "}
       <SwiperSlide>
-        <Grid container border={`5px solid ${theme.palette.primary.main}`} minHeight={200} p="15px">
+        <Grid container border={`5px solid ${theme.palette.primary?.main}`} minHeight={200} p="15px">
           <Grid item xs={12}>
             <Grid container>
               <Grid item xs={12}>
-                <Typography textAlign="center" fontWeight="600" fontSize="24px" color={theme.palette.black.main}>
+                <Typography textAlign="center" fontWeight="600" fontSize="24px" color={theme.palette.black?.main}>
                   John Smith
                 </Typography>
               </Grid>

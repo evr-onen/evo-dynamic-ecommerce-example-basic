@@ -15,7 +15,7 @@ const FeaturedProducts = () => {
   return (
     <Grid container rowSpacing={4}>
       <Grid item borderBottom="0.5px solid" color="black" xs={12} pb="10px">
-        <Typography color={theme.palette.black.main} fontWeight="700" fontSize="20px">
+        <Typography color={theme.palette.black?.main} fontWeight="700" fontSize="20px">
           FEATURED PRODUCTS
         </Typography>
       </Grid>

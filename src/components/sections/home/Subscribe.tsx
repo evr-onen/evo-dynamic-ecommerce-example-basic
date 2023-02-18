@@ -34,7 +34,7 @@ const SubscribeBlock = () => {
         />
       </Grid>
       <Grid item xs={12} display="flex">
-        <Button variant="contained" sx={{ color: "white", background: theme.palette.secondary.main, mx: "auto" }}>
+        <Button variant="contained" sx={{ color: "white", background: theme.palette.secondary?.main, mx: "auto" }}>
           <Typography textTransform="uppercase" fontWeight={700}>
             subscribe
           </Typography>
