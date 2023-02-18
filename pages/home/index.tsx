@@ -26,7 +26,7 @@ const index = () => {
           <Grid item xs={3}>
             <Grid container rowSpacing={4}>
               <Grid item xs={12} height="490px">
-                {/* <SideMenu /> */}
+                <SideMenu />
               </Grid>
               <Grid item xs={12} mt="20px">
                 {/* <SingleCommentSlider /> */}
