@@ -26,32 +26,32 @@ const index = () => {
           <Grid item xs={3}>
             <Grid container rowSpacing={4}>
               <Grid item xs={12} height="490px">
-                {/* <SideMenu /> */}
+                <SideMenu />
               </Grid>
               <Grid item xs={12} mt="20px">
-                {/* <SingleCommentSlider /> */}
+                <SingleCommentSlider />
               </Grid>
               <Grid item xs={12}>
-                {/* <NewsSlider /> */}
+                <NewsSlider />
               </Grid>{" "}
               <Grid item xs={12} marginTop="20px">
-                {/* <SubscribeBlock /> */}
+                <SubscribeBlock />
               </Grid>
             </Grid>
           </Grid>
           <Grid item xs={9}>
             <Grid container rowSpacing={4}>
               <Grid item xs={12}>
-                {/* <MainSlider /> */}
+                <MainSlider />
               </Grid>
               <Grid item xs={12} mt="20px">
-                {/* <DiscountImages /> */}
+                <DiscountImages />
               </Grid>
               <Grid item xs={12} mt="40px">
-                {/* <FeaturedProducts /> */}
+                <FeaturedProducts />
               </Grid>
               <Grid item xs={12} mt="20px">
-                {/* <OurAdvantage /> */}
+                <OurAdvantage />
               </Grid>
             </Grid>
           </Grid>
