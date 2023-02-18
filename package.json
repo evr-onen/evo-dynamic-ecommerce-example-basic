@@ -91,6 +91,7 @@
     "sweetalert2": "^11.6.5",
     "sweetalert2-react-content": "^5.0.7",
     "swiper": "^8.4.6",
+    "vercel": "^28.16.2",
     "yup": "0.32.9"
   },
   "devDependencies": {
