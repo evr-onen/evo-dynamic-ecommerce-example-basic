@@ -1,11 +1,11 @@
 // ** React Core
-import React, { MutableRefObject, useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { useRouter } from "next/router"
+
 // import { useSearchParams } from "next/navigation"
 import { useGlobalContext } from "src/contexts"
-import { withRouter, NextRouter } from "next/router"
+
 // ** MUI imports
 import { Box, Button, Chip, Grid, InputAdornment, Rating, Stack, TextField, Typography, IconButton } from "@mui/material"
 
@@ -24,9 +24,6 @@ import "swiper/css/thumbs"
 import { FaPlus, FaMinus } from "react-icons/fa"
 import { AiOutlineShoppingCart } from "react-icons/ai"
 
-// ** Components
-import RenderVariants from "src/components/slugProduct/variants"
-
 // ** Types
 import { ProductsType } from "src/types"
 
@@ -39,15 +36,10 @@ interface ParamsType {
     slugProduct: string
   }
 }
-type SelectedVariantObjType = {
-  quantity: string
-  [key: string]: string
-}
 
 // ** Vars
 let tmpProductVariantsObj: ProductVariantsObjType = {}
-let tmpButtonObj: { [key: string]: string } = {}
-let tmpObjVariantBtn = {}
+
 const index = (props: ParamsType) => {
   const { params } = props
   // ** States
@@ -109,7 +101,6 @@ const index = (props: ParamsType) => {
     console.log(checkedButton)
     if (product !== undefined) {
       if (Object.keys(product?.rowVariantData[0]!).length - 1 === Object.keys(checkedButton).length) {
-        // let tmpObjVariantBtn: SelectedVariantObjType = {}
         let tmpObjVariantBtn = product?.rowVariantData.find((item) => {
           return Object.keys(checkedButton).every((variantkey) => {
             return item[variantkey] === checkedButton[variantkey]
