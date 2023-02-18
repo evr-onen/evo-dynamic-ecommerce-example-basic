@@ -125,9 +125,7 @@ const Header = () => {
         <Grid container flexWrap="nowrap" justifyContent="space-between" alignItems="center">
           <Grid item className="logo" sx={{ position: "relative" }}>
             <Link href={"/home"}>
-              <a>
-                <Image src={Logo} quality={100} width={111} objectFit="contain" />
-              </a>
+              <Image src={Logo} quality={100} width={111} objectFit="contain" />
             </Link>
           </Grid>
           <Grid item className="search">
