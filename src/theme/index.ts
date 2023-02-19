@@ -26,8 +26,10 @@ export const lightTheme: ThemeOptions = createTheme({
     },
     text: {
       primary: "#796c7f",
+      disabled: "rgba(216,213,213,0.38)",
       secondary: "#BDE1F5",
     },
+    divider: "rgba(224,190,190,0.18)",
     background: {
       paper: "rgb(247,247,247)",
     },
@@ -107,6 +109,16 @@ export const lightTheme: ThemeOptions = createTheme({
 export const darkTheme = createTheme({
   palette: {
     mode: "dark",
+    black: {
+      main: "#222529",
+    },
+    white: {
+      main: "#fefefe",
+    },
+    gray: {
+      main: "#796c7f",
+    },
+
     primary: {
       main: "#4d4ddc",
     },
