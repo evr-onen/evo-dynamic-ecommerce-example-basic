@@ -108,7 +108,7 @@ export const lightTheme: ThemeOptions = createTheme({
 
 export const darkTheme = createTheme({
   palette: {
-    mode: "dark",
+    mode: "light",
     black: {
       main: "#222529",
     },
@@ -120,26 +120,24 @@ export const darkTheme = createTheme({
     },
 
     primary: {
-      main: "#4d4ddc",
+      main: "#0088CC",
     },
     secondary: {
-      main: "#afafd2",
-    },
-    background: {
-      default: "#111333",
-      paper: "#141b60",
+      main: "#0088CC",
     },
     text: {
-      secondary: "#f1bcbc",
+      primary: "#796c7f",
       disabled: "rgba(216,213,213,0.38)",
-      primary: "#efefef",
+      secondary: "#BDE1F5",
     },
     divider: "rgba(224,190,190,0.18)",
+    background: {
+      paper: "rgb(247,247,247)",
+    },
   },
   typography: {
     fontFamily: "Roboto Condensed",
   },
-
   components: {
     MuiCard: {
       defaultProps: {
@@ -159,42 +157,52 @@ export const darkTheme = createTheme({
     MuiOutlinedInput: {
       styleOverrides: {
         notchedOutline: {
-          borderColor: "#fdf2f2",
+          borderColor: "#111333",
         },
       },
     },
-
-    // color: "#6adc4d;",
-    MuiTabs: {
-      styleOverrides: {
-        indicator: {
-          background: "#6adc4d",
-        },
-      },
-    },
-    MuiTab: {
+    MuiMenuItem: {
       styleOverrides: {
         root: {
           "&.Mui-selected": {
-            color: "#6adc4d",
+            background: "#4d4ddc",
+            color: "#fdf2f2",
           },
-          "&:hover": {
-            color: "#6adc4d",
+          "&.Mui-selected:hover": {
+            backgroundColor: "#4d4ddc",
+            color: "#fdf2f2",
           },
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontWeight: "bold",
+          letterSpacing: "0.275px",
+          // "&:hover": {
+          //   background: "rgba(247,247,247,0.1)",
+          // },
         },
       },
     },
     MuiIconButton: {
+      defaultProps: {
+        size: "small",
+      },
       styleOverrides: {
         root: {
           "&.Mui-selected": {
             color: "#6adc4d",
           },
           "&:hover": {
-            color: "#6adc4d",
+            background: "rgba(247,247,247,0.1)",
           },
         },
       },
+    },
+    MuiGrid: {
+      defaultProps: {},
     },
   },
 })
