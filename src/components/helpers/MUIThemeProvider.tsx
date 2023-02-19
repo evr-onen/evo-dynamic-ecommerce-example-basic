@@ -11,7 +11,7 @@ const MUIThemeProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
   useEffect(() => {
     resolvedTheme === "light" ? setCurrentTheme(lightTheme) : setCurrentTheme(darkTheme)
   }, [resolvedTheme])
-
+  console.log(currentTheme)
   return (
     <ThemeProvider theme={currentTheme}>
       <CssBaseline />
