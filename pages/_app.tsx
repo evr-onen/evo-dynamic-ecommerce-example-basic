@@ -25,18 +25,18 @@ import "src/config/i18n"
 export interface MUIAppProps extends AppProps {
   emotionCache?: EmotionCache
 }
-// import { useRouter } from "next/router"
+import { useRouter } from "next/router"
 const App: FC<MUIAppProps> = ({ Component, pageProps, emotionCache }) => {
-  // const router = useRouter()
+  const router = useRouter()
 
   return (
     <PageProvider emotionCache={emotionCache}>
       <Grid container className="main">
         <Grid item xs={12}>
           <GlobalContextProvider>
-            {/* {router.pathname !== "/" && <Header />} */}
+            {router.pathname !== "/" && <Header />}
             <Component {...pageProps} />
-            {/* {router.pathname !== "/" && <Footer />} */}
+            {router.pathname !== "/" && <Footer />}
           </GlobalContextProvider>
         </Grid>
       </Grid>
