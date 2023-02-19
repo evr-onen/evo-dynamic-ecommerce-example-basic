@@ -9,7 +9,7 @@ const MUIThemeProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState<ThemeOptions>(lightTheme)
 
   useEffect(() => {
-    resolvedTheme === "light" ? setCurrentTheme(lightTheme) : setCurrentTheme(darkTheme)
+    resolvedTheme === "dark" ? setCurrentTheme(darkTheme) : setCurrentTheme(lightTheme)
   }, [resolvedTheme])
   console.log(currentTheme)
   return (
