@@ -5,8 +5,9 @@ import { RiRefund2Line, Ri24HoursLine } from "react-icons/ri"
 import { useTheme } from "@mui/material"
 const SliderTopModul = () => {
   const theme = useTheme()
+  console.log(theme)
   return (
-    <Grid container color={theme.palette.black?.main}>
+    <Grid container color={theme?.palette?.black?.main}>
       <Grid item xs={4} display="flex" justifyContent="center" alignItems="center">
         <Grid container m="auto" justifyContent="center" columnSpacing={2} py="25px">
           <Grid item>

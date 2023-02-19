@@ -19,7 +19,9 @@ const index = () => {
   return (
     <Grid container sx={{ maxWidth: "1200px", width: "100%" }} justifyContent="center" mx="auto">
       <Grid item xs={12} mb="25px">
-        <Box border="0.5px solid #c9c9c9">{/* <SliderTopModul /> */}</Box>
+        <Box border="0.5px solid #c9c9c9">
+          <SliderTopModul />
+        </Box>
       </Grid>
       <Grid item xs={12}>
         <Grid container columnSpacing={2} alignItems="flex-start">
