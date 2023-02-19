@@ -38,9 +38,9 @@ const NewsSlider = () => {
                   <Typography
                     fontWeight="700"
                     fontSize="24px"
-                    color={theme.palette.black?.main}
+                    color={theme?.palette?.black?.main}
                     textAlign="center"
-                    sx={{ "&:hover": { color: theme.palette?.secondary?.main }, cursor: "pointer" }}
+                    sx={{ "&:hover": { color: theme?.palette?.secondary?.main }, cursor: "pointer" }}
                   >
                     Fashion Trends
                   </Typography>
