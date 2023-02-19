@@ -47,7 +47,7 @@ const Header = () => {
   // console.log(theme.palette)
   return (
     <Grid container className="header-main" justifyContent="center" marginBottom="5px" alignItems="center">
-      <Grid item xs={12} sx={{ background: theme.palette.secondary.main }}>
+      <Grid item xs={12} sx={{ background: theme?.palette?.secondary?.main }}>
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item sx={{ maxWidth: "1200px", width: "100%", py: "10px" }} mx="auto">
             <Grid container justifyContent="space-between" alignItems="center">
@@ -83,24 +83,24 @@ const Header = () => {
               <Grid item>
                 <Grid container columnSpacing={4} justifyContent="space-between" alignItems="center">
                   <Grid item className="note" display="flex">
-                    <Typography my="auto" textTransform="uppercase" fontWeight={700} color={theme.palette.black.main}>
+                    <Typography my="auto" textTransform="uppercase" fontWeight={700} color={theme?.palette?.black?.main}>
                       welcome to porto!
                     </Typography>
                   </Grid>
                   <Grid item className="btns">
-                    <Button variant="text" size="small" sx={{ color: theme.palette.text.secondary, fontWeight: "bold", letterSpacing: "0.275px" }}>
+                    <Button variant="text" size="small" sx={{ color: theme?.palette?.text?.secondary, fontWeight: "bold", letterSpacing: "0.275px" }}>
                       contact us
                     </Button>
-                    <Button variant="text" size="small" sx={{ color: theme.palette.text.secondary, fontWeight: "bold", letterSpacing: "0.275px" }}>
+                    <Button variant="text" size="small" sx={{ color: theme?.palette?.text?.secondary, fontWeight: "bold", letterSpacing: "0.275px" }}>
                       my account
                     </Button>
-                    <Button variant="text" size="small" sx={{ color: theme.palette.text.secondary, fontWeight: "bold", letterSpacing: "0.275px" }}>
+                    <Button variant="text" size="small" sx={{ color: theme?.palette?.text?.secondary, fontWeight: "bold", letterSpacing: "0.275px" }}>
                       my wishlist
                     </Button>
-                    <Button variant="text" size="small" sx={{ color: theme.palette.text.secondary, fontWeight: "bold", letterSpacing: "0.275px" }}>
+                    <Button variant="text" size="small" sx={{ color: theme?.palette?.text?.secondary, fontWeight: "bold", letterSpacing: "0.275px" }}>
                       cart
                     </Button>
-                    <Button variant="text" size="small" sx={{ color: theme.palette.text.secondary, fontWeight: "bold", letterSpacing: "0.275px" }}>
+                    <Button variant="text" size="small" sx={{ color: theme?.palette?.text?.secondary, fontWeight: "bold", letterSpacing: "0.275px" }}>
                       login
                     </Button>
                   </Grid>
