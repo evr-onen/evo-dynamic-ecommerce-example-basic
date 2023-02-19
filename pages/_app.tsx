@@ -13,6 +13,7 @@ import { Grid } from "@mui/material"
 import PageProvider from "../src/components/helpers/PageProvider"
 
 // ** Components Imports
+// import Header from "src/components/sections/Header"
 import Header from "src/components/sections/Header"
 import Footer from "src/components/sections/Footer"
 

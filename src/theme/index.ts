@@ -4,7 +4,6 @@ import { purple } from "@mui/material/colors"
 export type AllowedTheme = NonNullable<PaletteOptions["mode"]>
 
 export const DEFAULT_THEME: AllowedTheme = "light"
-import { useTheme } from "@mui/material/styles"
 
 export const lightTheme: ThemeOptions = createTheme({
   palette: {
