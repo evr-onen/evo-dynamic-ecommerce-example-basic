@@ -6,7 +6,7 @@ import { GoMailRead } from "react-icons/go"
 const SubscribeBlock = () => {
   const theme = useTheme()
   return (
-    <Grid container rowSpacing={4} p="20px" sx={{ background: "#F4F4F4" }}>
+    <Grid container rowSpacing={4} p="1.25rem" sx={{ background: "#F4F4F4" }}>
       <Grid item xs={12}>
         <Typography textAlign="center" textTransform="uppercase">
           SUBSCRIBE NEWSLETTER
@@ -15,15 +15,15 @@ const SubscribeBlock = () => {
       <Grid item textAlign="center" xs={12}>
         <Typography>Get all the latest information on Events, Sales and Offers.</Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} textAlign="center">
         <TextField
           sx={{ mx: "10%", "& .MuiOutlinedInput-root": { borderRadius: "50px", background: "#fff" } }}
           autoComplete="off"
           InputProps={{
             startAdornment: (
               <InputAdornment position="end">
-                <Box mr="10px">
-                  <GoMailRead fontSize="20px" />
+                <Box mr="0.625rem">
+                  <GoMailRead fontSize="1.25rem" />
                 </Box>
               </InputAdornment>
             ),

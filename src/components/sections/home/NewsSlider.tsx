@@ -24,20 +24,20 @@ const NewsSlider = () => {
         clickable: true,
       }}
       modules={[Pagination]}
-      className="miniSlider"
+      className="miniSlider2"
     >
       <SwiperSlide>
         <Grid container>
-          <Grid item xs={12} position="relative" minHeight="210px">
+          <Grid item xs={12} sm={12} position="relative" minHeight="210px">
             <Image src="/images/news/shop1_post4-400x300.jpg" layout="fill" objectFit="contain" />
           </Grid>
           <Grid item xs={12}>
             <Grid container height="200px">
-              <Grid item xs={12}>
+              <Grid item xs={12} sx={{ [theme.breakpoints.up("md")]: { maxWidth: "300px" } }}>
                 <Link href="/">
                   <Typography
                     fontWeight="700"
-                    fontSize="24px"
+                    fontSize="1.5rem"
                     color={theme?.palette?.black?.main}
                     textAlign="center"
                     sx={{ "&:hover": { color: theme?.palette?.secondary?.main }, cursor: "pointer" }}
@@ -47,7 +47,7 @@ const NewsSlider = () => {
                 </Link>
               </Grid>
               <Grid item xs={12}>
-                <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, ab!</Typography>
+                <Typography textAlign="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, ab! asd</Typography>
               </Grid>
               <Grid item xs={12}>
                 <Link href="/">
@@ -72,7 +72,7 @@ const NewsSlider = () => {
                 <Link href="/">
                   <Typography
                     fontWeight="700"
-                    fontSize="24px"
+                    fontSize="1.5rem"
                     color={theme?.palette?.black?.main}
                     textAlign="center"
                     sx={{ "&:hover": { color: theme?.palette?.secondary?.main }, cursor: "pointer" }}
@@ -106,7 +106,7 @@ const NewsSlider = () => {
                 <Link href="/">
                   <Typography
                     fontWeight="700"
-                    fontSize="24px"
+                    fontSize="1.5rem"
                     color={theme?.palette?.black?.main}
                     textAlign="center"
                     sx={{ "&:hover": { color: theme?.palette?.secondary?.main }, cursor: "pointer" }}

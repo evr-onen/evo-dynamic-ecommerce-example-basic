@@ -104,7 +104,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
+.miniSlider2 .swiper-slide-active {
+  width: 100%;
+}
 /* Firefox */
 input[type="number"] {
   appearance: textfield;

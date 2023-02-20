@@ -11,9 +11,9 @@ const OurAdvantage = () => {
     <Grid container>
       <Grid item xs={12}>
         <Grid container columnSpacing={4}>
-          <Grid item xs={4} height="300px" p="20px">
+          <Grid item xs={12} sm={4} minHeight="300px" p="1.25rem">
             <Grid container justifyContent="center">
-              <Grid item xs={12} justifyContent="center" alignItems="center" display="flex" mb="20px" color={theme.palette.black?.main}>
+              <Grid item xs={12} justifyContent="center" alignItems="center" display="flex" mb="1.25rem" color={theme.palette.black?.main}>
                 <Box
                   border="2px solid"
                   color={theme.palette.secondary?.main}
@@ -24,10 +24,10 @@ const OurAdvantage = () => {
                   justifyContent="center"
                   alignItems="center"
                 >
-                  <SlEarphonesAlt fontSize="35px" />
+                  <SlEarphonesAlt fontSize="2.1875rem" />
                 </Box>
               </Grid>
-              <Grid item mb="20px">
+              <Grid item mb="1.25rem">
                 <Grid container>
                   <Grid item xs={12}>
                     <Typography textAlign="center" textTransform="uppercase" color={theme.palette.black?.main} fontWeight="700">
@@ -48,9 +48,9 @@ const OurAdvantage = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={4} height="500px" p="20px">
+          <Grid item xs={12} sm={4} minHeight="300px" p="1.25rem">
             <Grid container justifyContent="center">
-              <Grid item xs={12} justifyContent="center" alignItems="center" display="flex" mb="20px" color={theme.palette.black?.main}>
+              <Grid item xs={12} justifyContent="center" alignItems="center" display="flex" mb="1.25rem" color={theme.palette.black?.main}>
                 <Box
                   border="2px solid"
                   color={theme.palette.secondary?.main}
@@ -61,10 +61,10 @@ const OurAdvantage = () => {
                   justifyContent="center"
                   alignItems="center"
                 >
-                  <BsCreditCard2Back fontSize="35px" />
+                  <BsCreditCard2Back fontSize="2rem" />
                 </Box>
               </Grid>
-              <Grid item mb="20px">
+              <Grid item mb="1.25rem">
                 <Grid container>
                   <Grid item xs={12}>
                     <Typography textAlign="center" textTransform="uppercase" color={theme.palette.black?.main} fontWeight="700">
@@ -85,9 +85,9 @@ const OurAdvantage = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={4} height="500px" p="20px">
+          <Grid item xs={12} sm={4} minHeight="300px" p="1.25rem">
             <Grid container justifyContent="center">
-              <Grid item xs={12} justifyContent="center" alignItems="center" display="flex" mb="20px" color={theme.palette.black?.main}>
+              <Grid item xs={12} justifyContent="center" alignItems="center" display="flex" mb="1.25rem" color={theme.palette.black?.main}>
                 <Box
                   border="2px solid"
                   color={theme.palette.secondary?.main}
@@ -98,10 +98,10 @@ const OurAdvantage = () => {
                   justifyContent="center"
                   alignItems="center"
                 >
-                  <SlActionUndo fontSize="35px" />
+                  <SlActionUndo fontSize="2rem" />
                 </Box>
               </Grid>
-              <Grid item mb="20px">
+              <Grid item mb="1.25rem">
                 <Grid container>
                   <Grid item xs={12}>
                     <Typography textAlign="center" textTransform="uppercase" color={theme.palette.black?.main} fontWeight="700">

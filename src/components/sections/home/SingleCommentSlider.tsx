@@ -26,11 +26,11 @@ const SingleCommentSlider = () => {
       className="miniSlider"
     >
       <SwiperSlide>
-        <Grid container border={`5px solid ${theme.palette.primary?.main}`} minHeight={200} p="15px">
+        <Grid container border={`5px solid ${theme.palette.primary?.main}`} minHeight={200} p="1rem">
           <Grid item xs={12}>
             <Grid container>
               <Grid item xs={12}>
-                <Typography textAlign="center" fontWeight="600" fontSize="24px" color={theme.palette.black?.main}>
+                <Typography textAlign="center" fontWeight="600" fontSize="1.5rem" color={theme.palette.black?.main}>
                   John Smith
                 </Typography>
               </Grid>
@@ -42,9 +42,9 @@ const SingleCommentSlider = () => {
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <Grid container height="150px" position="relative">
+            <Grid container height="9.375rem" position="relative">
               <Grid item>
-                <Typography fontSize="32px" fontWeight="700" position="absolute" left="5%" top="10px">
+                <Typography fontSize="2rem" fontWeight="700" position="absolute" left="5%" top="0.625rem">
                   ``
                 </Typography>
               </Grid>
@@ -58,11 +58,11 @@ const SingleCommentSlider = () => {
         </Grid>
       </SwiperSlide>{" "}
       <SwiperSlide>
-        <Grid container border={`5px solid ${theme.palette.primary?.main}`} minHeight={200} p="15px">
+        <Grid container border={`5px solid ${theme.palette.primary?.main}`} minHeight={200} p="0.625rem">
           <Grid item xs={12}>
             <Grid container>
               <Grid item xs={12}>
-                <Typography textAlign="center" fontWeight="600" fontSize="24px" color={theme.palette.black?.main}>
+                <Typography textAlign="center" fontWeight="600" fontSize="1.5rem" color={theme.palette.black?.main}>
                   John Smith
                 </Typography>
               </Grid>
@@ -74,9 +74,9 @@ const SingleCommentSlider = () => {
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <Grid container height="150px" position="relative">
+            <Grid container height="9.375rem" position="relative">
               <Grid item>
-                <Typography fontSize="32px" fontWeight="700" position="absolute" left="5%" top="10px">
+                <Typography fontSize="2rem" fontWeight="700" position="absolute" left="5%" top="10px">
                   ``
                 </Typography>
               </Grid>
@@ -88,13 +88,13 @@ const SingleCommentSlider = () => {
             </Grid>
           </Grid>
         </Grid>
-      </SwiperSlide>{" "}
+      </SwiperSlide>
       <SwiperSlide>
-        <Grid container border={`5px solid ${theme.palette.primary?.main}`} minHeight={200} p="15px">
+        <Grid container border={`5px solid ${theme.palette.primary?.main}`} minHeight={200} p="1rem">
           <Grid item xs={12}>
             <Grid container>
               <Grid item xs={12}>
-                <Typography textAlign="center" fontWeight="600" fontSize="24px" color={theme.palette.black?.main}>
+                <Typography textAlign="center" fontWeight="600" fontSize="1.5rem" color={theme.palette.black?.main}>
                   John Smith
                 </Typography>
               </Grid>
@@ -106,9 +106,9 @@ const SingleCommentSlider = () => {
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <Grid container height="150px" position="relative">
+            <Grid container height="9.375rem" position="relative">
               <Grid item>
-                <Typography fontSize="32px" fontWeight="700" position="absolute" left="5%" top="10px">
+                <Typography fontSize="2rem" fontWeight="700" position="absolute" left="5%" top="10px">
                   ``
                 </Typography>
               </Grid>
