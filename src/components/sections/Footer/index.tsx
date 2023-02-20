@@ -3,7 +3,7 @@ import React from "react"
 import Image from "next/image"
 
 // ** MUI imports
-import { Box, Grid, Typography, IconButton, Stack, Button } from "@mui/material"
+import { Box, Grid, Typography, IconButton, Stack, Button, useMediaQuery } from "@mui/material"
 import { useTheme } from "@mui/material"
 // ** Images
 import FooterImage from "public/images/footer/shop1_footer_logo.png"
@@ -15,31 +15,35 @@ import Link from "next/link"
 
 const index = () => {
   const theme = useTheme()
+  const isSmall = useMediaQuery(theme.breakpoints.down("sm"))
   return (
     <Grid container marginTop="50px">
       <Grid item xs={12} sx={{ background: "#222529" }}>
         <Grid container>
-          <Grid item mx="auto" maxWidth="1200px" width="100%" minHeight="450px" alignItems="center" display="flex">
-            <Grid container>
-              <Grid item xs={3} px="20px">
-                <Grid container height="380px" alignContent="start">
+          <Grid item mx="auto" maxWidth="1250px" width="100%" minHeight="450px" alignItems="center" display="flex" py="1.5625rem">
+            <Grid container rowGap={4} textAlign="center" flexDirection={isSmall ? "column-reverse" : "row"}>
+              <Grid item xs={12} sm={3} px="20px">
+                <Grid container alignContent="start">
                   <Grid item xs={12} height="40px">
                     <Typography fontSize="18px" textTransform="uppercase" color="#fff" fontWeight="700">
                       about us
                     </Typography>
                   </Grid>
                   <Grid item xs={12} mb="20px">
-                    <Box display="flex" position="relative">
+                    <Box display="flex" position="relative" justifyContent="center">
                       <Image src={FooterImage} height={55} objectFit="contain" />
                     </Box>
                   </Grid>
                   <Grid item>
-                    <Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum magna, et dapibus lacus. Duis nec vestibulum magna, et dapibus lacus.</Typography>
+                    <Typography>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum magna, et dapibus lacus. Duis nec vestibulum magna,
+                      et dapibus lacus.
+                    </Typography>
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={3} px="20px">
-                <Grid container height="380px" alignContent="start">
+              <Grid item xs={12} sm={3} px="20px">
+                <Grid container alignContent="start">
                   <Grid item xs={12} height="40px">
                     <Typography fontSize="18px" textTransform="uppercase" color="#fff" fontWeight="700">
                       contact info
@@ -70,7 +74,7 @@ const index = () => {
                     <Typography fontSize="18px">Mon - Sun / 9:00 AM - 8:00 PM</Typography>
                   </Grid>
                   <Grid item xs={12} mb="20px">
-                    <Stack direction="row" justifyContent="space-evenly" pr="50px">
+                    <Stack direction="row" justifyContent="space-evenly">
                       <IconButton size="medium" color="white" sx={{ border: "0.5px solid gray" }}>
                         <FaFacebookF />
                       </IconButton>
@@ -84,8 +88,8 @@ const index = () => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={3} px="20px">
-                <Grid container height="380px" alignContent="start">
+              <Grid item xs={12} sm={3} px="20px">
+                <Grid container alignContent="start">
                   <Grid item xs={12} height="40px" mb="25px">
                     <Typography fontSize="18px" textTransform="uppercase" color="#fff" fontWeight="700">
                       CUSTOMER SERVICE
@@ -127,8 +131,8 @@ const index = () => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={3} px="20px">
-                <Grid container height="380px" alignContent="start">
+              <Grid item xs={12} sm={3} px="20px">
+                <Grid container alignContent="start" textAlign={isSmall ? "center" : "start"}>
                   <Grid item xs={12} height="40px">
                     <Typography fontSize="18px" textTransform="uppercase" color="#fff" fontWeight="700">
                       POPULAR TAGS

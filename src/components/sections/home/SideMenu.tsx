@@ -70,12 +70,34 @@ const SideMenu = () => {
 
     return Object.keys(tmpContainer as SectionType).map((section, index) => {
       return (
-        <MenuItem key={index} component="li" divider sx={{ position: "relative", "&:hover div": { scale: "1", visibility: "visible", opacity: "1", left: "100%", transition: "200ms" } }}>
-          {renderIcon(section)} <Typography sx={{ ml: "15px" }}>{section}</Typography>
-          <Grid container p="15px" sx={{ zIndex: "100", boxShadow: " rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;", background: "white", width: "500px", scale: "0.85", py: 0, border: "0.5px solid rgba(0, 0, 0, 0.12)", visibility: "hidden", opacity: "0", position: "absolute", left: "90%", top: 0 }}>
+        <MenuItem
+          key={index}
+          component="li"
+          divider
+          sx={{ position: "relative", "&:hover div": { scale: "1", visibility: "visible", opacity: "1", left: "100%", transition: "200ms" } }}
+        >
+          {renderIcon(section)} <Typography sx={{ ml: "1rem" }}>{section}</Typography>
+          <Grid
+            container
+            p="1rem"
+            sx={{
+              zIndex: "100",
+              boxShadow: " rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;",
+              background: "white",
+              width: "31.25rem",
+              scale: "0.85",
+              py: 0,
+              border: "0.5px solid rgba(0, 0, 0, 0.12)",
+              visibility: "hidden",
+              opacity: "0",
+              position: "absolute",
+              left: "90%",
+              top: 0,
+            }}
+          >
             {Object.keys(tmpContainer[section]).map((mainCat, i) => {
               return (
-                <Grid key={i} item sx={{ padding: "25px" }} xs={6}>
+                <Grid key={i} item sx={{ padding: "1.5625rem" }} xs={6}>
                   <Typography variant="subtitle1" fontWeight="700" textTransform="uppercase" textAlign="center">
                     {mainCat}
                   </Typography>

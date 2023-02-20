@@ -8,10 +8,10 @@ const SliderTopModul = () => {
   console.log(theme)
   return (
     <Grid container color={theme?.palette?.black?.main}>
-      <Grid item xs={4} display="flex" justifyContent="center" alignItems="center">
-        <Grid container m="auto" justifyContent="center" columnSpacing={2} py="25px">
+      <Grid item xs={12} sm={4} display="flex" justifyContent="center" alignItems="center">
+        <Grid container m="auto" justifyContent="center" columnSpacing={2} py="1.5625rem">
           <Grid item>
-            <FaShippingFast fontSize="32px" />
+            <FaShippingFast fontSize="2rem" />
           </Grid>
           <Grid item>
             <Typography variant="subtitle1" fontWeight="700" textTransform="uppercase">
@@ -22,10 +22,10 @@ const SliderTopModul = () => {
         </Grid>
       </Grid>
 
-      <Grid item xs={4} display="flex" justifyContent="center" alignItems="center">
-        <Grid container m="auto" justifyContent="center" columnSpacing={2} py="25px">
+      <Grid item xs={12} sm={4} display="flex" justifyContent="center" alignItems="center">
+        <Grid container m="auto" justifyContent="center" columnSpacing={2} py="1.5625rem">
           <Grid item>
-            <RiRefund2Line fontSize="32px" />
+            <RiRefund2Line fontSize="2rem" />
           </Grid>
           <Grid item>
             <Typography variant="subtitle1" fontWeight="700" textTransform="uppercase">
@@ -36,10 +36,10 @@ const SliderTopModul = () => {
         </Grid>
       </Grid>
 
-      <Grid item xs={4} display="flex" justifyContent="center" alignItems="center">
-        <Grid container m="auto" justifyContent="center" columnSpacing={2} py="25px">
+      <Grid item xs={12} sm={4} display="flex" justifyContent="center" alignItems="center">
+        <Grid container m="auto" justifyContent="center" columnSpacing={2} py="1.5625rem">
           <Grid item>
-            <Ri24HoursLine fontSize="32px" />
+            <Ri24HoursLine fontSize="2rem" />
           </Grid>
           <Grid item>
             <Typography variant="subtitle1" fontWeight="700" textTransform="uppercase">
