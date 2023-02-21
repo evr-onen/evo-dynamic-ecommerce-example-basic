@@ -13,22 +13,22 @@ const UIBreadcrumbs = (props: PropsType) => {
     <Box>
       <Breadcrumbs aria-label="breadcrumb">
         <Link underline="hover" color="black" href="/allproducts">
-          <Typography color="text.primary" textTransform="uppercase">
+          <Typography variant="body2" color="text.primary" textTransform="uppercase">
             {product?.section_cat.label}
           </Typography>
         </Link>
 
         <Link underline="hover" color="black" href="/allproducts">
-          <Typography color="text.primary" textTransform="uppercase">
+          <Typography variant="body2" color="text.primary" textTransform="uppercase">
             {product?.main_cat.label}
           </Typography>
         </Link>
         <Link underline="hover" color="black" href="/allproducts">
-          <Typography color="text.primary" textTransform="uppercase">
+          <Typography variant="body2" color="text.primary" textTransform="uppercase">
             {product?.sub_cat.label}
           </Typography>
         </Link>
-        <Typography color="text.primary" textTransform="uppercase">
+        <Typography variant="body2" color="text.primary" textTransform="uppercase">
           {product?.product_name}
         </Typography>
       </Breadcrumbs>

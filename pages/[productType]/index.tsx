@@ -21,6 +21,12 @@ import {
   Rating,
   Card,
   CardContent,
+  useMediaQuery,
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContentText,
+  DialogActions,
 } from "@mui/material"
 import { useTheme } from "@mui/material"
 
@@ -33,6 +39,7 @@ import TopSlider from "src/components/productType/TopSlider"
 
 // ** Types
 import { ProductsType } from "src/types"
+import { DialogContent } from "@mui/material"
 
 type VariantType = {
   [key: string]: string[] | undefined
@@ -52,7 +59,6 @@ let allVariantsContainer: VariantType = {}
 
 const index = () => {
   const { products } = useGlobalContext()
-  const theme = useTheme()
 
   // ** States
   const [productData, setProductData] = useState<ProductsType[]>(products)
@@ -62,7 +68,13 @@ const index = () => {
   const [productCats, setProductCats] = useState<{ [key: string]: string }>({})
   const [value1, setValue1] = useState<number[]>([0, 1000])
   const [maxValue, setMaxValue] = useState<number>(1000)
+  const [open, setOpen] = useState<boolean>(false)
+
   // ** Calls
+  const theme = useTheme()
+  const isLg = useMediaQuery(theme.breakpoints.down("lg"))
+  const isSm = useMediaQuery(theme.breakpoints.down("sm"))
+  const isMd = useMediaQuery(theme.breakpoints.down("md"))
 
   const handleCheckBox = (variantType: string, variantName: string) => {
     let tmpFilter = { ...filterData }
@@ -184,11 +196,11 @@ const index = () => {
   const renderProductCard = () => {
     return filteredProduct.map((productCard, index) => {
       return (
-        <Grid item xs={3} key={index} className="allProduct">
+        <Grid item xs={12} sm={4} md={3} key={index} className="allProduct">
           <Card>
             <CardContent>
               <Link href={`/allproducts/${productCard.id}`}>
-                <Grid container width="200" minHeight="300px" alignItems="flex-start" className="link">
+                <Grid container width="100%" maxWidth="200" minHeight="300px" alignItems="flex-start" className="link" justifyContent="center">
                   <Grid item position="relative">
                     <Image src="/images/products/product-4-300x300.jpg" width={200} height={200} objectFit="contain" />
                     <Box className="imageOverlay">
@@ -200,14 +212,14 @@ const index = () => {
                     </Box>
                   </Grid>
                   <Grid item>
-                    <Grid container>
+                    <Grid container textAlign="center">
                       <Grid item xs={12}>
-                        <Typography variant="subtitle1" fontWeight={700} color="error">
+                        <Typography variant={isSm ? "h3" : "subtitle1"} fontWeight={700} color="error">
                           {productCard.sub_cat.label}
                         </Typography>
                       </Grid>
                       <Grid item xs={12}>
-                        <Typography variant="h6" fontWeight={700}>
+                        <Typography variant={isSm ? "h5" : "h6"} fontWeight={700}>
                           {productCard.product_name}
                         </Typography>
                       </Grid>
@@ -258,60 +270,77 @@ const index = () => {
     getAllVariants()
   }, [])
 
+  const handleClickOpen = () => {
+    setOpen(true)
+  }
+  const handleClose = () => {
+    setOpen(false)
+  }
+
   useEffect(() => {
     filterProducts(filterData)
   }, [productCats, value1])
 
   return (
     <Grid container>
-      <Grid item maxWidth="1200px" width="100%" mx="auto">
-        <Grid container columnSpacing={4}>
-          <Grid item xs={2}>
-            <Grid container spacing={4}>
-              <Grid item xs={12}>
-                <CatsTree saveCatsHandler={saveCatsHandler} />
-              </Grid>
-              <Grid item xs={12}>
-                <Accordion defaultExpanded={true}>
-                  <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2a-content" id="panel2a-header">
-                    <Typography fontSize="24px" fontWeight="700">
-                      Price
-                    </Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Grid container>
-                      <Grid item xs={12}>
-                        <Grid container justifyContent="space-between">
-                          <Grid item xs={4}>
-                            {value1[0]}
-                          </Grid>
-                          <Grid item xs={4}>
-                            {value1[1]}
+      <Grid item maxWidth="1250px" width="100%" mx="auto" px="1.5625rem">
+        <Grid container spacing={4}>
+          {isLg && (
+            <Grid item xs={12} textAlign="center" mt="1rem">
+              <Button variant="outlined" onClick={handleClickOpen}>
+                Filters
+              </Button>
+            </Grid>
+          )}
+          {!isLg && (
+            <Grid item xs={2} minWidth="200px">
+              <Grid container spacing={4}>
+                <Grid item xs={12}>
+                  <CatsTree saveCatsHandler={saveCatsHandler} />
+                </Grid>
+                <Grid item xs={12}>
+                  <Accordion defaultExpanded={true}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2a-content" id="panel2a-header">
+                      <Typography fontSize="24px" fontWeight="700">
+                        Price
+                      </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Grid container>
+                        <Grid item xs={12}>
+                          <Grid container justifyContent="space-between">
+                            <Grid item xs={4}>
+                              {value1[0]}
+                            </Grid>
+                            <Grid item xs={4}>
+                              {value1[1]}
+                            </Grid>
                           </Grid>
                         </Grid>
+                        <Grid item xs={12}>
+                          <Slider
+                            // getAriaLabel={() => "Minimum distance"}
+                            value={value1}
+                            onChange={priceHandleChange}
+                            valueLabelDisplay="auto"
+                            getAriaValueText={valuetext}
+                            disableSwap
+                            marks
+                            min={0}
+                            max={maxValue}
+                            step={10}
+                          />
+                        </Grid>
                       </Grid>
-                      <Grid item xs={12}>
-                        <Slider
-                          // getAriaLabel={() => "Minimum distance"}
-                          value={value1}
-                          onChange={priceHandleChange}
-                          valueLabelDisplay="auto"
-                          getAriaValueText={valuetext}
-                          disableSwap
-                          marks
-                          min={0}
-                          max={maxValue}
-                          step={10}
-                        />
-                      </Grid>
-                    </Grid>
-                  </AccordionDetails>
-                </Accordion>
+                    </AccordionDetails>
+                  </Accordion>
+                </Grid>
+
+                {renderVariantFilter()}
               </Grid>
-              {renderVariantFilter()}
             </Grid>
-          </Grid>
-          <Grid item xs={10}>
+          )}
+          <Grid item xs={isLg ? 12 : 10}>
             <Grid container>
               <TopSlider />
               <Grid item xs={12} mt="15px">
@@ -320,6 +349,64 @@ const index = () => {
                 </Grid>
               </Grid>
             </Grid>
+          </Grid>
+          <Grid item>
+            <Dialog fullScreen={isSm} open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
+              <DialogTitle id="responsive-dialog-title">
+                <Typography variant="h3">Filters</Typography>
+              </DialogTitle>
+              <DialogContent>
+                <Grid container spacing={4}>
+                  <Grid item xs={12}>
+                    <CatsTree saveCatsHandler={saveCatsHandler} />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Accordion defaultExpanded={true}>
+                      <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2a-content" id="panel2a-header">
+                        <Typography fontSize="24px" fontWeight="700">
+                          Price
+                        </Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <Grid container>
+                          <Grid item xs={12}>
+                            <Grid container justifyContent="space-between">
+                              <Grid item xs={4}>
+                                {value1[0]}
+                              </Grid>
+                              <Grid item xs={4}>
+                                {value1[1]}
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                          <Grid item xs={12}>
+                            <Slider
+                              // getAriaLabel={() => "Minimum distance"}
+                              value={value1}
+                              onChange={priceHandleChange}
+                              valueLabelDisplay="auto"
+                              getAriaValueText={valuetext}
+                              disableSwap
+                              marks
+                              min={0}
+                              max={maxValue}
+                              step={10}
+                            />
+                          </Grid>
+                        </Grid>
+                      </AccordionDetails>
+                    </Accordion>
+                  </Grid>
+
+                  {renderVariantFilter()}
+                </Grid>
+              </DialogContent>
+              <DialogActions>
+                <Button autoFocus onClick={handleClose}>
+                  Close
+                </Button>
+              </DialogActions>
+            </Dialog>
           </Grid>
         </Grid>
       </Grid>

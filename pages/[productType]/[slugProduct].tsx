@@ -7,7 +7,7 @@ import Image from "next/image"
 import { useGlobalContext } from "src/contexts"
 
 // ** MUI imports
-import { Box, Button, Chip, Grid, InputAdornment, Rating, Stack, TextField, Typography, IconButton } from "@mui/material"
+import { Box, Button, Chip, Grid, InputAdornment, Rating, Stack, TextField, Typography, IconButton, useTheme, useMediaQuery } from "@mui/material"
 
 // ** Components
 import UIBreadcrumbs from "src/components/global/Breadcrumbs"
@@ -53,6 +53,10 @@ const index = (props: ParamsType) => {
   const { products } = useGlobalContext()
   const [checkedButton, setCheckedButton] = useState<{ [key: string]: string }>({})
   const [selectedVariantObj, setSelectedVariantObj] = useState<string>("")
+
+  // ** Calls
+  const theme = useTheme()
+  const isLg = useMediaQuery(theme.breakpoints.down("lg"))
 
   useEffect(() => {
     setProduct(products.find((item) => item.id == Number(params.slugProduct)))
@@ -159,15 +163,15 @@ const index = (props: ParamsType) => {
 
   return (
     <Grid container justifyContent="center">
-      <Grid item maxWidth="1200px" width="100%">
+      <Grid item maxWidth="1250px" width="100%" px="1.5625rem">
         <Grid container>
           <Grid item xs={12}>
             <UIBreadcrumbs product={product} />
           </Grid>
         </Grid>
       </Grid>
-      <Grid item maxWidth="1200px" width="100%" mb="25px">
-        <Grid container columnSpacing={4}>
+      <Grid item maxWidth="1250px" width="100%" mb="25px" px="1.5625rem">
+        <Grid container columnSpacing={4} justifyContent="center">
           <Grid item width="100%" maxWidth="500px" minHeight="600px">
             <Swiper loop={true} spaceBetween={10} thumbs={{ swiper: swiperRef.current }} modules={[Zoom, Thumbs]} className="ProductSwiper">
               <SwiperSlide>
@@ -186,7 +190,7 @@ const index = (props: ParamsType) => {
                 </Box>
               </SwiperSlide>
             </Swiper>
-            <Stack justifyContent="space-between" sx={{ mt: "10px" }}>
+            <Stack justifyContent="space-between">
               <Swiper
                 onSwiper={(swiper) => {
                   swiperRef.current = swiper
@@ -217,11 +221,11 @@ const index = (props: ParamsType) => {
             </Stack>
           </Grid>
           <Grid item width="100%" maxWidth="700px" minHeight="600px">
-            <Grid container rowSpacing={4}>
+            <Grid container rowSpacing={4} textAlign="center" justifyContent="center">
               <Grid item>
                 <Grid container>
                   <Grid item xs={12}>
-                    <Typography textTransform="uppercase" fontSize="48px" fontWeight="700">
+                    <Typography variant="h2" textTransform="uppercase" fontSize="48px" fontWeight="700">
                       {product?.product_name}
                     </Typography>
                   </Grid>
@@ -231,7 +235,7 @@ const index = (props: ParamsType) => {
                 </Grid>
               </Grid>
               <Grid item xs={12}>
-                <Typography fontWeight="700" fontSize="36px">
+                <Typography variant="h2" fontWeight="700" fontSize="36px" textAlign={isLg ? "center" : "left"}>
                   ${product?.price}
                 </Typography>
               </Grid>
@@ -270,8 +274,8 @@ const index = (props: ParamsType) => {
               {productVariantsObj && renderVariants()}
 
               <Grid item xs={12}>
-                <Grid container columnSpacing={4}>
-                  <Grid item xs={4}>
+                <Grid container spacing={4}>
+                  <Grid item xs={12} sm={4} textAlign="center">
                     <TextField
                       sx={{ width: "200px", mx: "10%", "& .MuiOutlinedInput-root": { borderRadius: "50px", background: "#fff" } }}
                       autoComplete="off"
@@ -302,7 +306,7 @@ const index = (props: ParamsType) => {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={8}>
+                  <Grid item xs={12} sm={8} textAlign="center">
                     <Button variant="contained" disabled={!Number(selectedVariantObj)}>
                       <AiOutlineShoppingCart fontSize="24px" />
                       <Typography fontWeight="700" fontSize="18px" textTransform="uppercase" ml="10px">
