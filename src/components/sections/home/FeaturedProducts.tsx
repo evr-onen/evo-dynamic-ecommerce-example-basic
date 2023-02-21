@@ -71,7 +71,7 @@ const FeaturedProducts = () => {
                     </Box>
                   </Box>
                 </Grid>
-                <Grid item>
+                <Grid item  xs={12}>
                   <Grid container textAlign={isSmall ? "center" : "start"}>
                     <Grid item xs={12}>
                       <Typography variant="subtitle1" fontWeight={700} color="error">
