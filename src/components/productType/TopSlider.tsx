@@ -14,18 +14,18 @@ const TopSlider = () => {
     <Grid item xs={12}>
       <Swiper loop={true} spaceBetween={10} className="ProductSwiper">
         <SwiperSlide>
-          <Box position="relative" height="284px">
-            <Image src="/images/archPage/shop1_shop_slider1.jpg" layout="fill" objectFit="cover" />
+          <Box position="relative" height="284px" width="100%">
+            <Image src="/images/archPage/shop1_shop_slider1.jpg" height={284} layout="fill" objectFit="cover" />
           </Box>
         </SwiperSlide>
         <SwiperSlide>
-          <Box position="relative" height="284px">
-            <Image src="/images/archPage/shop1_shop_slider1.jpg" layout="fill" objectFit="cover" />
+          <Box position="relative" height="284px" width="100%">
+            <Image src="/images/archPage/shop1_shop_slider1.jpg" height={284} layout="fill" objectFit="cover" />
           </Box>
         </SwiperSlide>
         <SwiperSlide>
-          <Box position="relative" height="284px">
-            <Image src="/images/archPage/shop1_shop_slider1.jpg" layout="fill" objectFit="cover" />
+          <Box position="relative" height="284px" width="100%">
+            <Image src="/images/archPage/shop1_shop_slider1.jpg" height={284} layout="fill" objectFit="cover" />
           </Box>
         </SwiperSlide>
       </Swiper>
