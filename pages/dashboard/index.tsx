@@ -44,28 +44,40 @@ const index = forwardRef((props, ref) => {
   return (
     <Grid container justifyContent="center">
       <Grid item maxWidth="1200px" width="100%" minHeight="800px">
-        <Card elevation={1}>
-          <CardContent>
-            <Box sx={{ width: "100%" }} color="#796c7f">
-              <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                  <Tab label="Dashboard" {...a11yProps(0)} sx={{ color: "#796c7f" }} />
-                  <Tab label="List" {...a11yProps(1)} sx={{ color: "#796c7f" }} />
-                  <Tab label="Create" {...a11yProps(2)} sx={{ color: "#796c7f" }} />
-                </Tabs>
-              </Box>
-              <TabPanel value={value} index={0}>
-                <DashboardTab />
-              </TabPanel>
-              <TabPanel value={value} index={1}>
-                <ListTab />
-              </TabPanel>
-              <TabPanel value={value} index={2}>
-                <CreateTab ref={ref} />
-              </TabPanel>
-            </Box>
-          </CardContent>
-        </Card>
+        <Grid container>
+          <Grid item xs={12} sx={{ borderBottom: 1, borderColor: "divider", width: "100%" }} color="#796c7f">
+            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" sx={{ width: "100%" }}>
+              <Tab label="Dashboard" {...a11yProps(0)} sx={{ color: "#796c7f" }} />
+              <Tab label="List" {...a11yProps(1)} sx={{ color: "#796c7f" }} />
+              <Tab label="Create" {...a11yProps(2)} sx={{ color: "#796c7f" }} />
+            </Tabs>
+            <Grid item xs={12}>
+              <Grid container>
+                <Grid item xs={12}>
+                  <TabPanel value={value} index={0}>
+                    <Grid container>
+                      <DashboardTab />
+                    </Grid>
+                  </TabPanel>
+                </Grid>
+                <Grid item xs={12}>
+                  <TabPanel value={value} index={1}>
+                    <Grid container>
+                      <ListTab />
+                    </Grid>
+                  </TabPanel>
+                </Grid>
+                <Grid item xs={12}>
+                  <TabPanel value={value} index={2}>
+                    <Grid container>
+                      <CreateTab ref={ref} />
+                    </Grid>
+                  </TabPanel>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   )
