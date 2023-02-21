@@ -17,6 +17,7 @@ import {
   Card,
   CardContent,
   CardHeader,
+  useMediaQuery,
 } from "@mui/material"
 import { useTheme } from "@mui/material"
 
@@ -119,6 +120,7 @@ const CreateProduct = forwardRef((props, inputRef) => {
 
   // ** Hooks
   const theme = useTheme()
+  const isSmall = useMediaQuery(theme.breakpoints.down("sm"))
 
   const {
     reset,
@@ -146,14 +148,14 @@ const CreateProduct = forwardRef((props, inputRef) => {
     return fields.map((item, fieldIndex) => {
       if (selectedVariantTypes.length) {
         return (
-          <Grid item key={fieldIndex} xs={6}>
+          <Grid item key={fieldIndex} xs={12} sm={6}>
             <Card>
               <CardHeader title={`Variant ${fieldIndex + 1}`} />
               <CardContent>
                 <Grid container spacing={4} marginY="15px">
                   {selectedVariantTypes?.map((variant: { id: number; variantName: string; variantValues: { value: string }[] }, index) => {
                     return (
-                      <Grid item key={variant.id} xs={6 / selectedVariantTypes.length}>
+                      <Grid item key={variant.id} xs={12} sm={6}>
                         <FormControl fullWidth>
                           <InputLabel id={variant.variantName + index} sx={{ color: theme.palette.text.primary }}>
                             {variant.variantName}
@@ -190,7 +192,7 @@ const CreateProduct = forwardRef((props, inputRef) => {
                     )
                   })}
                   {selectedVariantTypes.length ? (
-                    <Grid item xs={3}>
+                    <Grid item xs={12}>
                       <Controller
                         // {...register(`rowVariantData.${fieldIndex}.quantity`)}
                         name={`rowVariantData.${fieldIndex}.quantity` as any}
@@ -298,21 +300,22 @@ const CreateProduct = forwardRef((props, inputRef) => {
   useEffect(() => {
     reset(defaultValues)
   }, [resetCount])
+
   return (
     <Grid container>
       <Grid item xs={12}>
         <Grid container spacing={4} justifyContent="center" alignItems="center">
-          <Grid item xs={2}>
+          <Grid item xs={7}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label" sx={{ color: theme.palette.text.primary }}>
-                Variant Select
+                Product Select
               </InputLabel>
               <Select
                 color="secondary"
                 fullWidth
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                label="Variant Select"
+                label="Product Select"
                 value={selectProduct}
                 onChange={(e) => setSelectProduct(e.target.value as string)}
               >
@@ -320,12 +323,12 @@ const CreateProduct = forwardRef((props, inputRef) => {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs={3}>
             <Button variant="contained" onClick={editHandler}>
               Edit
             </Button>
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs={3}>
             <Button
               variant="contained"
               onClick={() => {
@@ -411,7 +414,7 @@ const CreateProduct = forwardRef((props, inputRef) => {
 
               {errors.description && <FormHelperText error>{errors.description?.message}</FormHelperText>}
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={12} sm={4}>
               <QuickAdd getCategory={getCategory} name="section_cat">
                 <Controller
                   control={control}
@@ -442,7 +445,7 @@ const CreateProduct = forwardRef((props, inputRef) => {
               </QuickAdd>
               {errors.section_cat && <FormHelperText error>{errors.section_cat?.message}</FormHelperText>}
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={12} sm={4}>
               <QuickAdd getCategory={getCategory} name="main_cat">
                 <Controller
                   control={control}
@@ -473,7 +476,7 @@ const CreateProduct = forwardRef((props, inputRef) => {
               </QuickAdd>
               {errors.main_cat && <FormHelperText error>{errors.main_cat?.message}</FormHelperText>}
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={12} sm={4}>
               <QuickAdd getCategory={getCategory} name="sub_cat">
                 <Controller
                   control={control}

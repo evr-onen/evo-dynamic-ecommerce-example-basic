@@ -3,7 +3,22 @@ import React, { forwardRef, useEffect, useState } from "react"
 import { useGlobalContext } from "src/contexts"
 
 // ** MUI Imports
-import { Button, Card, CardContent, FormHelperText, Grid, Stack, TextField, Box, InputLabel, Select, MenuItem, FormControl, Fab } from "@mui/material"
+import {
+  Button,
+  Card,
+  CardContent,
+  FormHelperText,
+  Grid,
+  Stack,
+  TextField,
+  Box,
+  InputLabel,
+  Select,
+  MenuItem,
+  FormControl,
+  Fab,
+  useMediaQuery,
+} from "@mui/material"
 import { useTheme, IconButton } from "@mui/material"
 
 // **Icons
@@ -40,7 +55,7 @@ const CreateVariant = forwardRef((props, ref) => {
   const [resetCount, setResetCount] = useState(0)
   // ** Hooks
   const theme = useTheme()
-
+  const isMd = useMediaQuery(theme.breakpoints.up("md"))
   const {
     register,
     control,
@@ -98,8 +113,8 @@ const CreateVariant = forwardRef((props, ref) => {
   return (
     <Grid container spacing={4}>
       <Grid item xs={12}>
-        <Grid container spacing={4} justifyContent="center" alignItems="center">
-          <Grid item xs={3}>
+        <Grid container gap={1} justifyContent={isMd ? "start" : "center"} alignItems="center">
+          <Grid item xs={12} sm={7} md={3}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label" sx={{ color: theme.palette.text.primary }}>
                 Variant Select
@@ -117,12 +132,12 @@ const CreateVariant = forwardRef((props, ref) => {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs={6} sm={2} textAlign="center">
             <Button variant="contained" onClick={editHandler}>
               Edit
             </Button>
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs={6} sm={2} textAlign="center">
             <Button
               variant="contained"
               onClick={() => {
@@ -138,8 +153,8 @@ const CreateVariant = forwardRef((props, ref) => {
         <form onSubmit={handleSubmit(handleOnSubmit as () => string)}>
           <Card elevation={4} sx={{ borderRadius: "30px" }}>
             <CardContent>
-              <Grid container spacing={4} justifyContent="center" alignItems="center">
-                <Grid item xs={2}>
+              <Grid container gap={1} justifyContent="center" alignItems="center">
+                <Grid item xs={8} sm={4}>
                   <Controller
                     control={control}
                     name="variantName"
@@ -161,7 +176,7 @@ const CreateVariant = forwardRef((props, ref) => {
                   {errors.variantName && <FormHelperText sx={{ color: "error.main" }}>{errors.variantName.message}</FormHelperText>}
                 </Grid>
 
-                <Grid item>
+                <Grid item xs={3} md={1}>
                   <Fab color="primary" aria-label="add" onClick={addHandler} size="small">
                     <FaPlus />
                   </Fab>
@@ -169,9 +184,9 @@ const CreateVariant = forwardRef((props, ref) => {
                 <Grid item xs={12}>
                   <Grid container spacing={2} alignItems="center">
                     {fields.map((field, index) => (
-                      <Grid item xs={4} key={index}>
-                        <Grid container alignItems="center" spacing={4}>
-                          <Grid item>
+                      <Grid item xs={12} md={4} key={index}>
+                        <Grid container alignItems="center" gap={2}>
+                          <Grid item xs={8} md={9}>
                             <Controller
                               control={control}
                               name={`variantValues.${index}.value`}
@@ -198,7 +213,7 @@ const CreateVariant = forwardRef((props, ref) => {
                               <FormHelperText sx={{ color: "error.main" }}>{errors?.variantValues?.[index]?.value?.message}</FormHelperText>
                             )}
                           </Grid>
-                          <Grid item>
+                          <Grid item xs={3} md={2}>
                             <Fab color="secondary" aria-label="delete" onClick={() => minuss(index)} size="small">
                               <FaMinus />
                             </Fab>
